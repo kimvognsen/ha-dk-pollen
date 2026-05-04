@@ -1,0 +1,149 @@
+type: vertical-stack
+cards:
+  - type: markdown
+    content: |-
+
+      https://www.astma-allergi.dk/dagens-pollental/?s=
+    title: Se dagens pollental
+  - type: custom:layout-card
+    layout_type: custom:grid-layout
+    layout:
+      grid-template-columns: repeat(2, 1fr)
+      grid-auto-flow: row
+    cards:
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_birk_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.birk_pollen_niveau
+          primary: >
+            Birk: {{ states('sensor.birk_pollen_niveau') }} {% set t =
+            states('sensor.birk_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:tree
+          icon_color: >
+            {% set s = states('sensor.birk_pollen_niveau') %} {% if s == 'Lav'
+            %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_bynke_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.bynke_pollen_niveau
+          primary: >
+            Bynke: {{ states('sensor.bynke_pollen_niveau') }} {% set t =
+            states('sensor.bynke_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:grass
+          icon_color: >
+            {% set s = states('sensor.bynke_pollen_niveau') %} {% if s == 'Lav'
+            %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_el_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.el_pollen_niveau
+          primary: >
+            El: {{ states('sensor.el_pollen_niveau') }} {% set t =
+            states('sensor.el_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:tree-outline
+          icon_color: >
+            {% set s = states('sensor.el_pollen_niveau') %} {% if s == 'Lav' %}
+            green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_elm_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.elm_pollen_niveau
+          primary: >
+            Elm: {{ states('sensor.elm_pollen_niveau') }} {% set t =
+            states('sensor.elm_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:tree-outline
+          icon_color: >
+            {% set s = states('sensor.elm_pollen_niveau') %} {% if s == 'Lav' %}
+            green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_alternaria_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.alternaria_pollen_niveau
+          primary: >
+            Alternaria: {{ states('sensor.alternaria_pollen_niveau') }} {% set t
+            = states('sensor.alternaria_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:bacteria
+          icon_color: >
+            {% set s = states('sensor.alternaria_pollen_niveau') %} {% if s ==
+            'Lav' %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %}
+            red {% else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_cladosporium_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.cladosporium_pollen_niveau
+          primary: >
+            Cladosporium: {{ states('sensor.cladosporium_pollen_niveau') }} {%
+            set t = states('sensor.cladosporium_seneste') %} {% if t not in
+            ['unknown', 'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:bacteria-outline
+          icon_color: >
+            {% set s = states('sensor.cladosporium_pollen_niveau') %} {% if s ==
+            'Lav' %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %}
+            red {% else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_graes_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.graes_pollen_niveau
+          primary: >
+            Græs: {{ states('sensor.graes_pollen_niveau') }} {% set t =
+            states('sensor.graes_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:flower
+          icon_color: >
+            {% set s = states('sensor.graes_pollen_niveau') %} {% if s == 'Lav'
+            %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
+      - type: conditional
+        conditions:
+          - condition: state
+            entity: sensor.vis_hassel_chip
+            state: "True"
+        card:
+          type: custom:mushroom-template-card
+          entity: sensor.hassel_pollen_niveau
+          primary: >
+            Hassel: {{ states('sensor.hassel_pollen_niveau') }} {% set t =
+            states('sensor.hassel_pollen_seneste') %} {% if t not in ['unknown',
+            'unavailable', 'none', None] %} ({{ t }}) {% endif %}
+          icon: mdi:leaf
+          icon_color: >
+            {% set s = states('sensor.hassel_pollen_niveau') %} {% if s == 'Lav'
+            %} green {% elif s == 'Middel' %} amber {% elif s == 'Høj' %} red {%
+            else %} grey {% endif %}
