@@ -21,3 +21,5 @@ Kopier filer til din HA config:
 ```yaml
 rest: !include_dir_merge_list entities/rest
 template: !include_dir_merge_list entities/templates
+
+### Created with help from ChatGPT and tested in Home Assistant.
