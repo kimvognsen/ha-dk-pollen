@@ -1,7 +1,7 @@
 # HA DK Pollen
 
 Home Assistant configuration for Danish pollen data from Astma-Allergi Danmark.
-
+![UV Card](screenshots/dk-polen.png)
 ## Features
 
 - REST sensor (robust parsing af API)
