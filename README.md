@@ -2,6 +2,21 @@
 
 Home Assistant configuration for Danish pollen data from Astma-Allergi Danmark.
 ![Pollen Card](screenshots/dk-pollen.png)
+
+## Supported pollen types
+
+- Birk
+- Græs
+- Bynke
+- Hassel
+- El / Elm
+- Alternaria
+- Cladosporium
+
+## Dashboard example
+
+Uses Mushroom cards with conditional visibility (only Moderate/High shown)
+
 ## Features
 
 - REST sensor (robust parsing af API)
