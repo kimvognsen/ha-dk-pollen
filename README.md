@@ -31,6 +31,9 @@ Uses Mushroom cards with conditional visibility (only Moderate/High shown)
 
 ### Created with help from ChatGPT and tested in Home Assistant.
 
+## License
+MIT
+
 ## Installation
 
 Kopier filer til din HA config:
